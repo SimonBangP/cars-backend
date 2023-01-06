@@ -48,11 +48,20 @@ public class SetupDevUsers implements ApplicationRunner {
             .bestDiscount(30.0)
             .build();
 
+    Car car2 = Car.builder()
+                    .brand("Audi")
+                    .model("A3")
+                    .pricePrDay(450)
+                    .bestDiscount(25.0)
+                    .build();
+
     carRepository.save(car1);
+    carRepository.save(car2);
 
     //Reserve the car
     reservationService.reserveCar(m1.getUsername(), car1.getId(), LocalDate.of(2022, 10,10));
     try {
+
       reservationService.reserveCar(m1.getUsername(), car1.getId(), LocalDate.of(2022, 10, 10));
     } catch (ResponseStatusException ex){
       System.out.println("Car was already reserved");

@@ -1,0 +1,7 @@
+dat3/ApplicationTests.class
+dat3/cars/repository/CarRepositoryTest.class
+dat3/cars/service/MemberServiceMockitoTest.class
+dat3/cars/service/CarServiceMockitoTest.class
+dat3/experiments/SimpleSanitizerTest.class
+dat3/cars/service/MemberServiceMockWithH2Test.class
+dat3/cars/service/ReservationServiceTest.class

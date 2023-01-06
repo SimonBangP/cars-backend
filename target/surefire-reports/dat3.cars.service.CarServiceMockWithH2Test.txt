@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: dat3.cars.service.CarServiceMockWithH2Test
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.011 s <<< FAILURE! - in dat3.cars.service.CarServiceMockWithH2Test
+dat3.cars.service.CarServiceMockWithH2Test  Time elapsed: 0.011 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: 
+could not execute statement; SQL [n/a]; constraint ["FKGKMBSPV7RLJIXXOXO1AF80LPP: PUBLIC.RESERVATION FOREIGN KEY(CAR_ID) REFERENCES PUBLIC.CAR(ID) (9)"; SQL statement:
+delete from car where id=? [23503-214]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at dat3.cars.service.CarServiceMockWithH2Test.initTestData(CarServiceMockWithH2Test.java:32)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at dat3.cars.service.CarServiceMockWithH2Test.initTestData(CarServiceMockWithH2Test.java:32)
+Caused by: org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: 
+Referential integrity constraint violation: "FKGKMBSPV7RLJIXXOXO1AF80LPP: PUBLIC.RESERVATION FOREIGN KEY(CAR_ID) REFERENCES PUBLIC.CAR(ID) (9)"; SQL statement:
+delete from car where id=? [23503-214]
+	at dat3.cars.service.CarServiceMockWithH2Test.initTestData(CarServiceMockWithH2Test.java:32)
+
