@@ -55,8 +55,32 @@ public class SetupDevUsers implements ApplicationRunner {
                     .bestDiscount(25.0)
                     .build();
 
+    Car car3 = Car.builder()
+                    .brand("VW")
+                    .model("Up")
+                    .pricePrDay(250)
+                    .bestDiscount(10.0)
+                    .build();
+
+    Car car4 = Car.builder()
+                    .brand("VW")
+                    .model("Golf")
+                    .pricePrDay(350)
+                    .bestDiscount(15.0)
+                    .build();
+
+    Car car5 = Car.builder()
+                    .brand("Peugeot")
+                    .model("208")
+                    .pricePrDay(300)
+                    .bestDiscount(20.0)
+                    .build();
+
     carRepository.save(car1);
     carRepository.save(car2);
+    carRepository.save(car3);
+    carRepository.save(car4);
+    carRepository.save(car5);
 
     //Reserve the car
     reservationService.reserveCar(m1.getUsername(), car1.getId(), LocalDate.of(2022, 10,10));
